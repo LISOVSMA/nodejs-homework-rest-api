@@ -5,7 +5,7 @@ const { SENDGRID_API_KEY } = process.env;
 sendgrid.setApiKey(SENDGRID_API_KEY);
 
 const sendEmail = async (data) => {
-  const email = { ...data, from: "Movchan.n2106@icloud.com" };
+  const email = { ...data, from: "lisovsma@proton.me" };
   await sendgrid.send(email);
   return true;
 };
