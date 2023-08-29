@@ -7,6 +7,14 @@ const router = express.Router();
 
 router.post("/register", validateBody(schemas.signSchema), controller.register);
 
+router.get("/verify/:verificationToken", controller.verifyEmail);
+
+router.post(
+  "/verify",
+  validateBody(schemas.emailSchema),
+  controller.resendVerifyEmail
+);
+
 router.post("/login", validateBody(schemas.signSchema), controller.login);
 
 router.post("/logout", checkJwt, controller.logout);
